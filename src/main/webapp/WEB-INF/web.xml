@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<!--  -->
+	<!-- Application Name -->
+	<display-name>Demo JDBC</display-name>
+	<description>JDBC Demo Application</description>
+	
+  <!-- Context Params - stuff our code uses  -->
+	<context-param>
+		<param-name>version</param-name>
+		<param-value>1.0.1</param-value>
+	</context-param>
+
+	<!-- SQL properties file -->
+	<context-param>
+		<param-name>properties</param-name>
+		<param-value>/sql.properties</param-value>
+	</context-param>
+	<!--  -->	
+  
+	<!-- Define datasource JNDI name used -->
+	<context-param>
+		<param-name>datasource</param-name>
+		<param-value>jdbc/demo</param-value>
+	</context-param>
+	<!-- --> 
+  
+	<!-- Initialize Properties & Logging when application starts -->
+	<listener>
+		<listener-class>startup.ContextListener</listener-class>
+	</listener>
+	
+	<!-- Note:  Servlet definitions are annotated in servlet classes  -->
+	
+ <!-- Welcome Files - default page -->
+  <welcome-file-list>
+    <welcome-file>test</welcome-file>
+  </welcome-file-list>
+ 
+	<!-- JDBC DataSource resource - needed by some containers to access a DataSource -->
+	<resource-ref>
+		<description>Database DataSource</description>
+		<res-ref-name>jdbc/demo</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>	
+</web-app>

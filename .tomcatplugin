@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcatProjectProperties>
+    <rootDir>/target/WebContent</rootDir>
+    <workDir>/work</workDir>
+    <exportSource>false</exportSource>
+    <reloadable>true</reloadable>
+    <redirectLogger>false</redirectLogger>
+    <updateXml>true</updateXml>
+    <warLocation></warLocation>
+    <extraInfo>%3CResource+name%3D%22jdbc%2Fdemo%22%0D%0Atype%3D%22javax.sql.DataSource%22%0D%0Aauth%3D%22Container%22%0D%0AdriverClassName%3D%22com.mysql.cj.jdbc.Driver%22%0D%0Aurl%3D%22jdbc%3Amysql%3A%2F%2Flocalhost%3A3306%2Ftest%22%0D%0Ausername%3D%22user%22%0D%0Apassword%3D%22password%22%0D%0AtestOnBorrow%3D%22true%22%0D%0AtimeBetweenEvictionRunsMillis%3D%22120000%22%0D%0AminEvictableIdleTimeMillis%3D%22300000%22%09%09%0D%0AmaxWaitMillis%3D%2210000%22%2F%3E%0D%0A</extraInfo>
+    <mavenClasspath>false</mavenClasspath>
+    <webPath>/demo</webPath>
+</tomcatProjectProperties>

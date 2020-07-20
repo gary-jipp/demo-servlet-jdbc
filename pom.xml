@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>demo.jdbc</name>
+	<groupId>demo</groupId>
+	<artifactId>demo-servlet</artifactId>
+	<version>1.0</version>
+  
+	<packaging>war</packaging>
+  <properties>
+    <maven.compiler.target>1.9</maven.compiler.target>
+    <maven.compiler.source>1.9</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+	<build>
+    <!-- Fixed WebContent directory for live Tomcat debugging. War filename specified in plugin -->
+    <finalName>WebContent</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    
+	  <resources>
+			<resource>
+        <!-- This is not quite standard, but lets us debug in real-time -->
+				<directory>src/main/java</directory>
+				<targetPath>${project.build.outputDirectory}</targetPath>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			  </resource>
+    </resources>
+
+		<plugins>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+         <warName>${project.name}</warName>
+         <webappDirectory>target/WebContent</webappDirectory>
+        </configuration>
+      </plugin>
+      
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>WebContent/WEB-INF</directory>
+							<includes>
+								<include>lib/*.jar</include>
+								<include>lib</include>
+							</includes>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+    
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+    <!-- Don't include this as a JDBC driver os almost always included in the server -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.17</version>
+		</dependency>
+		-->
+		
+	</dependencies>
+</project>

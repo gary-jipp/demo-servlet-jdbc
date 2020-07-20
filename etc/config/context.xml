@@ -1,0 +1,33 @@
+<!-- 
+This context file is for development purposes ONLY.  It should not
+normally be deployed into a production server.  If you are seeing 
+this file in a production server it was probably included by mistake
+
+This context file is only useful for deployment within a Tomcat servlet
+container.  Other servlet containers or J2EE servers will implement
+their own methods of initializing the context.
+-->
+	
+<Context antiJARLocking="true" antiResourceLocking="false" >
+
+	<Resource name="jdbc/demo"
+		type="javax.sql.DataSource"
+		auth="Container"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/test"
+		username="user"
+		password="password"
+		testOnBorrow="true"
+		timeBetweenEvictionRunsMillis="120000"
+		minEvictableIdleTimeMillis="300000"		
+		maxWaitMillis="10000"
+	/>
+	
+	<!-- Config properties file -->
+	<Environment name="config/demo" type="java.lang.String" override="false"
+	value="file:///D:/Dev/EclipseJava/demo.jdbc.maven/etc/config/config.properties"/>
+
+
+
+
+</Context>
