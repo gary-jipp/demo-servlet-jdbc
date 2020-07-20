@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Displays the status of the common properties.
  */
-@WebServlet("/test")
+@WebServlet("/hello")
 public class HelloServlet extends JDBCServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

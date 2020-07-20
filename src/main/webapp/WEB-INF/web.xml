@@ -38,7 +38,7 @@
 	
  <!-- Welcome Files - default page -->
   <welcome-file-list>
-    <welcome-file>test</welcome-file>
+    <welcome-file>hello</welcome-file>
   </welcome-file-list>
  
 	<!-- JDBC DataSource resource - needed by some containers to access a DataSource -->
