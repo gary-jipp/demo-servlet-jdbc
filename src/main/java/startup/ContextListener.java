@@ -24,7 +24,6 @@ import common.WebConstants;
 
 /**
  * Called on server startup. Initializes context<br>
- * The System property must exist for this application to deploy
  */
 public class ContextListener implements ServletContextListener {
   private Logger logger;
