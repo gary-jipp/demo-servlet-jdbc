@@ -23,11 +23,5 @@ their own methods of initializing the context.
 		maxWaitMillis="10000"
 	/>
 	
-	<!-- Config properties file -->
-	<Environment name="config/demo" type="java.lang.String" override="false"
-	value="file:///D:/Dev/EclipseJava/demo.jdbc.maven/etc/config/config.properties"/>
-
-
-
 
 </Context>

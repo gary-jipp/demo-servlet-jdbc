@@ -117,7 +117,7 @@ public class ContextListener implements ServletContextListener {
   }
 
   /**
-   * Get Host name of appo server
+   * Get Host name of server
    * 
    * @param logger
    * @return
