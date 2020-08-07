@@ -32,6 +32,8 @@ public class HelloServlet extends JDBCServlet {
     ResultSet rs = null;
     Connection connection = null;
     PreparedStatement statement = null;
+    
+    // Use one of our SQL queries - all in one properties file so easy to manage
     String sql = properties.getProperty("sql.test1");
     try {
       connection = datasource.getConnection();
