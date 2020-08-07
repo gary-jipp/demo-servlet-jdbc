@@ -62,7 +62,7 @@ public class HelloServlet extends JDBCServlet {
           out.println(name + "(" + type + ")" + ": " + value);
         }
 
-        // Read columns Explicitly (this is the normal thing we do)
+        // Read columns Explicitly (this is the normal way to do it)
         String name = rs.getString("name");
         String value = rs.getString("value");
         String created = rs.getString("created");
